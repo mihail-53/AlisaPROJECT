@@ -4,11 +4,36 @@
              x:Class="AlisaPROJECT.Views.RegisterPage"
              Title="RegisterPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Sign Up"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid RowDefinitions="*, 5*, auto" Margin="10">
+            <Label 
+                Text="Sign Up"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                Grid.Row="0"/>
             
+            <ScrollView Grid.Row="1">
+                <VerticalStackLayout Padding="10" Spacing="10">
+                    <Label Text="Enter Name:"/>
+                    <Entry Placeholder="Name" x:Name="nameEntry"/>
+
+                    <Label Text="Enter Email:"/>
+                    <Entry Placeholder="Email" x:Name="emailEntry"/>
+                    <Label Text="" x:Name="errRegisterEmail" TextColor="Red"/>
+
+                    <Label Text="Enter Password:"/>
+                    <Grid ColumnDefinitions="*, 75">
+                        <Entry Placeholder="password must contain 8 characters at least" IsPassword="True" x:Name="passwordEntry" Grid.Column="0"/>
+                        <Button Text="show" Grid.Column="1" Clicked="OnShowPasswordClicked" x:Name="showButton"/>
+                    </Grid>
+                    <Label Text="" x:Name="errRegisterPassword" TextColor="Red"/>
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <VerticalStackLayout Grid.Row="2" Padding="10" Spacing="10">
+                <Button Text="Already have an account? Log In" Clicked="goToLogInClicked" />
+                <Button Text="Register" Clicked="registerClicked" />
+            </VerticalStackLayout>
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
     
