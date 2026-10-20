@@ -30,7 +30,7 @@
             </ScrollView>
 
             <VerticalStackLayout Grid.Row="2" Padding="10" Spacing="10">
-                <Button Text="Already have an account? Log In" Clicked="goToLogInClicked" />
+                <Button Style="{x:StaticResource LinkButton}" Text="Already have an account? Log In" Clicked="goToLogInClicked" />
                 <Button Text="Register" Clicked="registerClicked" />
             </VerticalStackLayout>
         </Grid>

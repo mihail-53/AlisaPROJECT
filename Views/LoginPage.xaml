@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helper="clr-namespace:AlisaPROJECT.Helper"
              x:Class="AlisaPROJECT.Views.LoginPage"
-             Title="LoginPage">
+             Title="LoginPage"
+             Style="{x:StaticResource AuthBackground}">
     <VerticalStackLayout>
         <Grid RowDefinitions="*, auto, auto" Margin="10">
             <Label 
@@ -18,11 +20,10 @@
                     <Label Text="" x:Name="errLoginEmail" TextColor="Red"/>
 
                     <Label Text="Enter Password:"/>
-                    <HorizontalStackLayout>
-                        <Entry Placeholder="Password" IsPassword="True" x:Name="passwordEntry"/>
-                        <Button Text="Show"/>
-                        <!--Clicked="OnShowPasswordClicked"-->
-                    </HorizontalStackLayout>
+                    <Grid ColumnDefinitions="*, 75">
+                        <Entry Placeholder="Password" IsPassword="True" x:Name="passwordEntry" Grid.Column="0"/>
+                        <Button Grid.Column="1" FontFamily="Material" Text="{x:Static helper:IconFont.Visibility }" Clicked="OnShowPasswordClicked" x:Name="showButton" />
+                    </Grid>
                     <Label Text="" x:Name="errLoginPassword" TextColor="Red"/>
                 </VerticalStackLayout>
             </ScrollView>

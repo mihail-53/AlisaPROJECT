@@ -1,4 +1,5 @@
 using AlisaPROJECT.Models;
+
 using AlisaPROJECT.Services;
 
 namespace AlisaPROJECT.Views;
@@ -39,5 +40,22 @@ public partial class LoginPage : ContentPage
             }
         }
 
+    }
+
+    private void OnShowPasswordClicked(object sender, EventArgs e)
+    {
+
+        bool isPass = passwordEntry.IsPassword;
+
+        passwordEntry.IsPassword = !isPass;
+
+        if (isPass)
+        {
+            showButton.Text = "show";
+        }
+        else
+        {
+            showButton.Text = "hide";
+        }
     }
 }
